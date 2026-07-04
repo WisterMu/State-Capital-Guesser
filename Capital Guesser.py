@@ -23,6 +23,7 @@ def capitalOregon():
 
     t = turtle.Turtle()
     t.speed(3)
+    t.clear()
 
     #Turtle Drawing
     t.penup()
@@ -95,7 +96,7 @@ def capitalFlorida():
             guesses += 1
 
     # Correct Answer, Draw the State of Florida
-    if user_correct = True:
+    if user_correct == True:
         turtle.penup()
         turtle.goto(0, 0)
         turtle.pencolor("blue")
@@ -173,6 +174,7 @@ def capitalTexas():
     correct_answers = ["austin"]
     capital = "AUSTIN"
     attempts_allowed = 3
+    t = turtle.Turtle()
 
     t.clear()
     t.penup()
@@ -244,21 +246,42 @@ def capitalTexas():
 
 def main():
     Correct = bool()
-    Oregon = bool()
-    Texas = bool()
-    Florida = bool()
     score = int()
-
     score = 0
+    screen = turtle.Screen()
 
-    choice = int(input("What state do you want to guess the Capital for? /n"
+    choice = int(input("What state do you want to guess the Capital for? q to quit\n"
                        "1. Oregon \n"
                        "2. Florida \n"
                        "3. Texas \n"
                        ))
 
-    if choice == 1:
-        Oregon = capitalOregon()
+    while choice != "q":
+        screen.clearscreen()
+        if choice == 1:
+            Correct = capitalOregon()
 
-        if Oregon == True:
+            if Correct == True:
+                score = score + 1
+                
+        elif choice == 2:
+            Correct = capitalFlorida()
+
+            if Correct == True:
+                score = score + 1
+
+        elif choice == 3:
+            Correct = capitalTexas()
+
+            if Correct == True:
+                score = score + 1
+
+        choice = int(input("What state do you want to guess the Capital for? \n"
+                           "1. Oregon \n"
+                           "2. Florida \n"
+                           "3. Texas \n"
+                           ))         
+                    
+main()
+            
             
