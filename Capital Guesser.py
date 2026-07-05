@@ -83,12 +83,10 @@ def capitalFlorida():
     user_correct = False
 
     while guesses < 2 and not user_correct:
-        answer = screen.textinput(
-            "The Sunshine State Quiz",
+        answer = str(input("The Sunshine State Quiz \n"
             "What is the capital of Florida?\n\n"
-            "Miami\nTallahassee\nOrlando\nFt. Lauderdale\nTampa\n\n"
-            f"Guess {guesses+1} of 2 — Type your answer exactly as shown:"
-        )
+            f"Guess {guesses+1} of 2:"
+        ))
 
         if answer in correct_answers:
             user_correct = True
@@ -250,20 +248,20 @@ def main():
     score = 0
     screen = turtle.Screen()
 
-    choice = int(input("What state do you want to guess the Capital for? q to quit\n"
+    choice = int(input("What state do you want to guess the Capital for? Enter the corrosponding number\n"
                        "1. Oregon \n"
                        "2. Florida \n"
                        "3. Texas \n"
+                       "4. Quit \n"
                        ))
 
-    while choice != "q":
+    while choice != 4:
         screen.clearscreen()
         if choice == 1:
             Correct = capitalOregon()
 
             if Correct == True:
                 score = score + 1
-                
         elif choice == 2:
             Correct = capitalFlorida()
 
@@ -280,7 +278,10 @@ def main():
                            "1. Oregon \n"
                            "2. Florida \n"
                            "3. Texas \n"
-                           ))         
+                           "4. Quit \n"
+                           ))
+
+    print("score: " + str(score))
                     
 main()
             
