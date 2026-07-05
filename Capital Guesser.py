@@ -243,18 +243,20 @@ def capitalTexas():
             return False
 
 def main():
+    #Define variables
     Correct = bool()
     score = int()
     score = 0
     screen = turtle.Screen()
 
+    #Initial choice
     choice = int(input("What state do you want to guess the Capital for? Enter the corrosponding number\n"
                        "1. Oregon \n"
                        "2. Florida \n"
                        "3. Texas \n"
                        "4. Quit \n"
                        ))
-
+    #While loop to allow functions to be called and assign points
     while choice != 4:
         screen.clearscreen()
         if choice == 1:
@@ -280,7 +282,7 @@ def main():
                            "3. Texas \n"
                            "4. Quit \n"
                            ))
-
+    #Display users end score total
     print("score: " + str(score))
                     
 main()
